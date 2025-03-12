@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const multer = require("multer");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const path = require("path");
 require("dotenv").config();
 
 const mongoURI = process.env.MONGO_URI;
