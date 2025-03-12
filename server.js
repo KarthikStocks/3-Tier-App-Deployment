@@ -13,14 +13,14 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 // app.use("/karthik", express.static("profilePics"));
-// http://localhost:4567/profilePics\1740056389138_P_pic.png
-// http://localhost:4567/karthik\1740056389138_P_pic.png
+// /profilePics\1740056389138_P_pic.png
+// /karthik\1740056389138_P_pic.png
 
 // app.use("/sachin", express.static("profilePics"));
-// http://localhost:4567/sachin\1740056389138_P_pic.png
+// /sachin\1740056389138_P_pic.png
 
 app.use("/profilePics", express.static("profilePics"));
-// http://localhost:4567/profilePics\1740056389138_P_pic.png
+// /profilePics\1740056389138_P_pic.png
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {

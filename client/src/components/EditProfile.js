@@ -25,7 +25,7 @@ function EditProfile() {
     ageInputRef.current.value = loginDetails.age;
     emailInputRef.current.value = loginDetails.email;
     mobileNoInputRef.current.value = loginDetails.mobileNo;
-    setSelectedPicPath(`http://localhost:4567/${loginDetails.profilePic}`);
+    setSelectedPicPath(`/${loginDetails.profilePic}`);
   }, []);
 
   let [selectedPicPath, setSelectedPicPath] = useState("./images/noPic.jpg");
@@ -56,7 +56,7 @@ function EditProfile() {
   //     body: dataToSendJSON,
   //   };
 
-  //   let JSONData = await fetch("http://localhost:4567/signUp", reqOptions);
+  //   let JSONData = await fetch("/signUp", reqOptions);
 
   //   let JSOData = await JSONData.json();
   //   console.log(JSOData);
@@ -81,7 +81,7 @@ function EditProfile() {
   //     body: dataToSend,
   //   };
 
-  //   let JSONData = await fetch("http://localhost:4567/signup", reqOptions);
+  //   let JSONData = await fetch("/signup", reqOptions);
 
   //   let JSOData = await JSONData.json();
   //   console.log(JSOData);
@@ -110,10 +110,7 @@ function EditProfile() {
       body: dataToSend,
     };
 
-    let JSONData = await fetch(
-      "http://localhost:4567/updateProfile",
-      reqOptions
-    );
+    let JSONData = await fetch("/updateProfile", reqOptions);
 
     let JSOData = await JSONData.json();
     console.log(JSOData);
