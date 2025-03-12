@@ -22,6 +22,8 @@ app.use(express.urlencoded());
 app.use("/profilePics", express.static("profilePics"));
 // /profilePics\1740056389138_P_pic.png
 
+app.use(express.static(path.join(__dirname, "./client/build")));
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "profilePics");
@@ -60,6 +62,10 @@ let connectTOMDB = async () => {
 };
 
 connectTOMDB();
+
+app.get("*", (req, res) => {
+  res.sendFile("./client/build/index.html");
+});
 
 app.post("/signUp", upload.single("profilePic"), async (req, res) => {
   // app.post("/signUp", upload.none(), async (req, res) => {
